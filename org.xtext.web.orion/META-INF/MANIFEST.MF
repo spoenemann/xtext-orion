@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Xtext Integration in Orion
+Bundle-SymbolicName: org.xtext.web.orion;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: itemis AG
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Require-Bundle: javax.servlet;bundle-version="3.0.0",
+ com.google.guava,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtext.web,
+ org.eclipse.xtext.web.servlet,
+ org.eclipse.xtend.lib,
+ org.eclipse.xtend.lib.macro,
+ org.eclipse.equinox.http.registry;bundle-version="1.1.0",
+ org.xtext.example.statemachine,
+ org.xtext.example.statemachine.ide

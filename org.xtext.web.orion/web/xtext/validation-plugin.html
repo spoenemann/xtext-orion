@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Xtext Validation Plugin</title>
+	<script src="../requirejs/require.js"></script>
+	<script>
+	require.config({
+		baseUrl: "../",
+		paths: {
+			"jquery": "http://code.jquery.com/jquery-2.1.4.min"
+		}
+	});
+	require(['../orion/plugin', 'xtext/services/ValidationService2'], function(PluginProvider, ValidationService) {
+		var headers = { name: "Xtext Validation Plugin", version: "2.9.0", description: "Validation through the Xtext server." };
+		var provider = new PluginProvider(headers);
+		var serverUrl = "http://" + location.host + "/xtext-service";
+		var validationService = new ValidationService(serverUrl);
+		provider.registerServiceProvider("orion.edit.validator", validationService, {
+			contentType: [ "xtext/statemachine" ]
+		});
+		provider.connect();
+	});
+	</script>
+</head>
+<body></body>
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.equinox.http.registry.servlets">
+      <servlet
+            alias="/xtext-service"
+            class="org.xtext.web.orion.StatemachineXtextServlet">
+      </servlet>
+      <serviceSelector
+            filter="(other.info=org.eclipse.orion)">
+      </serviceSelector>
+   </extension>
+   <extension
+         point="org.eclipse.equinox.http.registry.httpcontexts">
+      <httpcontext
+            id="org.xtext.web.orion">
+         <resource-mapping
+               bundle="org.xtext.web.orion"
+               path="/web/xtext">
+         </resource-mapping>
+         <resource-mapping
+               bundle="org.eclipse.xtext.web"
+               path="/META-INF/resources/xtext/2.9.0-SNAPSHOT">
+         </resource-mapping>
+      </httpcontext>
+   </extension>
+   <extension
+         point="org.eclipse.equinox.http.registry.resources">
+      <resource
+            alias="/xtext"
+            httpcontextId="org.xtext.web.orion">
+      </resource>
+      <serviceSelector
+            filter="(other.info=org.eclipse.orion)">
+      </serviceSelector>
+   </extension>
+</plugin>

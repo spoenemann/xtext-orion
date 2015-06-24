@@ -1,0 +1,7 @@
+//outlet.DEFAULT_OUTPUT.sourceFolder.src/test/java.directory=build/xtend-gen/test
+eclipse.preferences.version=1
+outlet.DEFAULT_OUTPUT.generateGeneratedAnnotation=false
+outlet.DEFAULT_OUTPUT.generateSuppressWarnings=true
+outlet.DEFAULT_OUTPUT.generatedAnnotationComment=
+outlet.DEFAULT_OUTPUT.includeDateInGenerated=false
+outlet.DEFAULT_OUTPUT.sourceFolder.xtend-gen.directory=build/xtend-gen/main

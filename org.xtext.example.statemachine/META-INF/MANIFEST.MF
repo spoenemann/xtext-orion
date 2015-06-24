@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.example.statemachine
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.example.statemachine; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext;visibility:=reexport,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types,
+ org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.xtext.example.statemachine,
+ org.xtext.example.statemachine.services,
+ org.xtext.example.statemachine.statemachine,
+ org.xtext.example.statemachine.statemachine.impl,
+ org.xtext.example.statemachine.statemachine.util,
+ org.xtext.example.statemachine.serializer,
+ org.xtext.example.statemachine.parser.antlr,
+ org.xtext.example.statemachine.parser.antlr.internal,
+ org.xtext.example.statemachine.validation,
+ org.xtext.example.statemachine.scoping,
+ org.xtext.example.statemachine.generator,
+ org.xtext.example.statemachine.formatting
+

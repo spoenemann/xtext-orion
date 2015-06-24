@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Xtext Editor Plugin</title>
+	<link rel="stylesheet" type="text/css" href="xtext-editor-plugin.css" />
+	<script src="../requirejs/require.js"></script>
+	<script type="text/javascript">
+	require.config({
+		baseUrl: '../',
+		paths: {
+			text: 'requirejs/text',
+			i18n: 'requirejs/i18n',
+			domReady: 'requirejs/domReady',
+			csslint: 'csslint/csslint',
+			jquery: 'http://code.jquery.com/jquery-2.1.4.min'
+		}
+	});
+	require(['xtext/xtext-editor-plugin']);
+	</script>
+</head>
+<body>
+<div id="xtext-editor"></div>
+</body>
+</html>

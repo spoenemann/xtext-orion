@@ -1,0 +1,19 @@
+plugins {
+	id 'java'
+}
+
+repositories {
+	jcenter()
+	maven {
+		url "https://oss.sonatype.org/content/repositories/snapshots/"
+	}
+}
+
+dependencies {
+	compile group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.web.servlet', version: '2.9.0-SNAPSHOT'
+}
+
+task copyDependencies(type: Copy) {
+    from configurations.compile
+    into '.'
+}

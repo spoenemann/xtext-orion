@@ -1,0 +1,6 @@
+.DS_Store
+.gradle/
+bin/
+xtend-gen/
+*.xtendbin
+*._trace

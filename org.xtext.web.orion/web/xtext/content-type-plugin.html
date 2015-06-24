@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Xtext Content Type Plugin</title>
+	<script src="../requirejs/require.js"></script>
+	<script>
+	require.config({
+		baseUrl: "../"
+	});
+	require(["orion/plugin"], function(PluginProvider) {
+		var headers = { name: "Xtext Content Type Plugin", version: "2.9.0", description: "Content types for use with Xtext." };
+		var provider = new PluginProvider(headers);
+		provider.registerServiceProvider("orion.core.contenttype", {}, {
+    		contentTypes: [{
+				id: "xtext/statemachine",
+				name: "State Machine",
+				extension: ["statemachine"],
+				extends: "text/plain"
+			}]
+		});
+		provider.connect();
+	});
+	</script>
+</head>
+<body></body>
+</html>
