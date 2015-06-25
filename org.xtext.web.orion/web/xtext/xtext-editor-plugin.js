@@ -49,7 +49,7 @@ define([
 	
 	var headers = {
 		name: 'Xtext Editor Plugin',
-		version: '1.0',
+		version: '2.9.0',
 		description: 'This plugin provides an editor for Xtext languages.'
 	};
 

@@ -13,11 +13,13 @@ import java.util.concurrent.ExecutorService
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor
 import org.eclipse.xtext.ide.LexerIdeBindings
+import org.eclipse.xtext.ide.editor.contentassist.IdeContentProposalProvider
 import org.eclipse.xtext.ide.editor.contentassist.antlr.IContentAssistParser
 import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.Lexer
 import org.eclipse.xtext.web.server.DefaultWebModule
 import org.xtext.example.statemachine.ide.contentassist.antlr.StatemachineParser
 import org.xtext.example.statemachine.ide.contentassist.antlr.internal.InternalStatemachineLexer
+import org.xtext.web.orion.contentassist.StatemachineWebContentProposalProvider
 
 @Accessors
 @FinalFieldsConstructor
@@ -35,6 +37,10 @@ class StatemachineWebModule extends DefaultWebModule {
 
 	def Class<? extends IContentAssistParser> bindIContentAssistParser() {
 		StatemachineParser
+	}
+	
+	def Class<? extends IdeContentProposalProvider> bindIdeContentProposal() {
+		StatemachineWebContentProposalProvider
 	}
 
 }

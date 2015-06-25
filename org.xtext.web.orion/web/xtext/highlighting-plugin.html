@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Xtext Syntax Highlighting Plugin</title>
+	<script src="../requirejs/require.js"></script>
+	<script>
+	require.config({
+		baseUrl: "../"
+	});
+	require(["orion/plugin", "xtext/generated/statemachine-syntax"], function(PluginProvider, statemachineSyntax) {
+		var headers = {
+			name: "Xtext Syntax Highlighting Plugin",
+			version: "2.9.0",
+			description: "Syntax highlighting for Xtext languages."
+		};
+		var provider = new PluginProvider(headers);
+		var grammar = statemachineSyntax.grammars[statemachineSyntax.grammars.length - 1];
+		provider.registerServiceProvider("orion.edit.highlighter", {}, grammar);
+		provider.connect();
+	});
+	</script>
+</head>
+<body></body>
+</html>

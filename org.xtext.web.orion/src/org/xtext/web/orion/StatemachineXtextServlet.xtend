@@ -7,35 +7,20 @@
  *******************************************************************************/
 package org.xtext.web.orion
 
-import com.google.inject.Guice
-import com.google.inject.Module
-import com.google.inject.util.Modules
-import java.util.concurrent.ExecutorService
-import java.util.concurrent.Executors
 import org.eclipse.xtext.web.servlet.XtextServlet
-import org.xtext.example.statemachine.StatemachineRuntimeModule
-import org.xtext.example.statemachine.StatemachineStandaloneSetup
 
 class StatemachineXtextServlet extends XtextServlet {
 
-	ExecutorService executorService
-
+	StatemachineWebSetup setup
+	
 	override init() {
 		super.init()
-		executorService = Executors.newCachedThreadPool
-		new StatemachineStandaloneSetup {
-			override createInjector() {
-				val runtimeModule = new StatemachineRuntimeModule as Module
-				val webModule = new StatemachineWebModule(executorService)
-				return Guice.createInjector(Modules.override(runtimeModule).with(webModule))
-			}
-		}.createInjectorAndDoEMFRegistration
+		setup = new StatemachineWebSetup()
+		setup.createInjectorAndDoEMFRegistration()
 	}
 
 	override destroy() {
-		if (executorService !== null)
-			executorService.shutdown()
-		executorService = null
+		setup.dispose()
 		super.destroy()
 	}
 

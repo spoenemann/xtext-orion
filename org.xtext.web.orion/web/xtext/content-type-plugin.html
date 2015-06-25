@@ -9,7 +9,11 @@
 		baseUrl: "../"
 	});
 	require(["orion/plugin"], function(PluginProvider) {
-		var headers = { name: "Xtext Content Type Plugin", version: "2.9.0", description: "Content types for use with Xtext." };
+		var headers = {
+			name: "Xtext Content Type Plugin",
+			version: "2.9.0",
+			description: "Content types for use with Xtext."
+		};
 		var provider = new PluginProvider(headers);
 		provider.registerServiceProvider("orion.core.contenttype", {}, {
     		contentTypes: [{
